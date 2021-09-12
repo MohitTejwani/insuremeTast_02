@@ -1,0 +1,15 @@
+version: "3.7"
+services: 
+    core-backend:
+        image: 'insureme-node-tast-2'
+        build: .
+        container_name: 'insureme-node-tast-2'
+        networks: 
+            - app-tier
+        ports: 
+            - '5002:5002'
+            # - '5006:5006'
+networks:
+    app-tier:
+        name: insureme
+        driver: bridge
